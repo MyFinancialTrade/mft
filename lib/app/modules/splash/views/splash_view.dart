@@ -18,8 +18,8 @@ class SplashView extends GetView<SplashController> {
               curve: Curves.easeInOut,
               child: Image.asset(
                 'assets/icons/logo.png',
-                width: 100.w,
-                height: 100.h,
+                width: 30.w,
+                height: 30.w,
               ),
             )),
       ),

@@ -7,18 +7,23 @@ import 'package:sizer/sizer.dart';
 
 import 'app/routes/app_pages.dart';
 
-void main() async {
-  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  runApp(
-    Sizer(
-      builder: (context, orientation, screenType) {
-        return GetMaterialApp(
-          title: "Application",
-          theme: ThemeData(textTheme: GoogleFonts.montserratTextTheme()),
-          initialRoute: AppPages.INITIAL,
-          getPages: AppPages.routes,
-        );
-      },
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then(
+    (_) => runApp(
+      Sizer(
+        builder: (context, orientation, screenType) {
+          return GetMaterialApp(
+            title: "Application",
+            theme: ThemeData(
+              textTheme: GoogleFonts.montserratTextTheme(),
+              scaffoldBackgroundColor: Color(0xffFAFAFA),
+            ),
+            initialRoute: AppPages.INITIAL,
+            getPages: AppPages.routes,
+          );
+        },
+      ),
     ),
   );
 }

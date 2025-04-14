@@ -12,13 +12,13 @@ class AppColors {
   static const primary = Color(0xff0D0A5C);
   static const primaryDark = Color(0xff674399);
   static const primaryLight = Color(0xFF9D74D0);
-  static const secondary = Color(0xffEE57AC);
+  static const secondary = Color(0xff2C0A4F);
   static const green = Color(0xff00A651);
   static const red = Color(0xffE21313);
   static const orangeBg = Color(0xffFFE3CD);
   static const orangeText = Color(0xffFA7D1D);
   static const warning = Color(0xffF38F00);
-  static const greyBgLight = Color(0xffff7f7f7);
+  static const greyBgLight = Color(0xfff7f7f7);
   static const backgroundPrimary = Color(0xffE2E2E4);
   static const backgroundSecondary = Color(0xffF6F6F6);
   static const primaryText = Color(0xff2E2E2E);
@@ -51,4 +51,7 @@ class AppColors {
   static const Color disableButtonColor = Color(0x80674399);
   static const Color textFieldBorderColor = Color(0XFFC6C6C8);
   static const Color primary_100 = Color(0XFFF0E6FF);
+  static const Color inactive = Color(0XFFD9D9D9);
+  // static const Color primary_100 = Color(0XFFF0E6FF);
+  // static const Color primary_100 = Color(0XFFF0E6FF);
 }

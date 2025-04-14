@@ -1,23 +1,8 @@
 import 'package:get/get.dart';
 
 class IntroController extends GetxController {
-  //TODO: Implement IntroController
+  RxDouble activeIndex = 0.0.obs;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
+  void setActiveIndex(double index) => activeIndex.value = index;
+  void toggleActiveIndex() => activeIndex.value = 1 ;
 }

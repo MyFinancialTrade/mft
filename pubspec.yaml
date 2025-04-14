@@ -43,6 +43,8 @@ dependencies:
   dots_indicator: ^4.0.1
   sizer: ^3.0.5
   http_parser: ^4.1.2
+  flutter_otp_text_field: ^1.5.1+1
+  intl_phone_field: ^3.2.0
 
 dev_dependencies:
   flutter_test:
@@ -61,8 +63,8 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   assets:
-    - assets/icons/logo.png
-    - assets/images/money.png
+    - assets/icons/
+    - assets/images/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
