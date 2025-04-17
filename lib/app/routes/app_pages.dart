@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:mft/app/modules/forgot_password/views/forgot_password_view.dart';
 import 'package:mft/app/modules/forgot_password/views/success_password_view.dart';
 
 import '../modules/forgot_password/bindings/forgot_password_binding.dart';
@@ -18,7 +19,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.SIGNUP;
+  static const INITIAL = Routes.SPLASH;
 
   static final routes = [
     GetPage(
@@ -43,7 +44,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.FORGOT_PASSWORD,
-      page: () => const SuccessPasswordView(),
+      page: () => const ForgotPasswordView(),
       binding: ForgotPasswordBinding(),
     ),
     GetPage(

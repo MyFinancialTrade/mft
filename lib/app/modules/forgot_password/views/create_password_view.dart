@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:mft/app/modules/forgot_password/controllers/forgot_password_controller.dart';
-import 'package:mft/app/modules/shared/arrow_back.dart';
+import 'package:mft/app/modules/forgot_password/views/success_password_view.dart';
+import 'package:mft/app/modules/shared/widgets/arrow_back.dart';
 import 'package:mft/app/modules/shared/widgets/heading.dart';
 import 'package:mft/app/modules/shared/widgets/password_input_field.dart';
 import 'package:mft/app/modules/shared/widgets/width_button.dart';
+import 'package:mft/app/utils/commons.dart';
 import 'package:sizer/sizer.dart';
 
 class CreatePasswordView extends GetView<ForgotPasswordController> {
@@ -13,6 +15,7 @@ class CreatePasswordView extends GetView<ForgotPasswordController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Padding(
         padding: EdgeInsets.fromLTRB(7.w, 2.h, 7.w, 0),
         child: Column(
@@ -30,12 +33,12 @@ class CreatePasswordView extends GetView<ForgotPasswordController> {
                 SizedBox(height: 8.h),
                 CustomPasswordInputField(
                   title: 'Password',
-                  controller: TextEditingController(),
+                  controller: controller.passwordEditiingController.value,
                   hint: 'Enter your password',
                 ),
                 CustomPasswordInputField(
                   title: 'Confirm Password',
-                  controller: TextEditingController(),
+                  controller: controller.conformPasswordEditiingController.value,
                   hint: 'Confirm your password',
                 ),
               ],
@@ -46,7 +49,7 @@ class CreatePasswordView extends GetView<ForgotPasswordController> {
                 return WidthButton(
                   active: controller.isPasswordFormValid.value,
                   title: 'Reset',
-                  onTap: () {},
+                  onTap: () => gotoClass(SuccessPasswordView()),
                 );
               }),
             ),

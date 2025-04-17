@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mft/app/modules/shared/widgets/bold_text.dart';
 import 'package:mft/app/modules/shared/widgets/width_button.dart';
+import 'package:mft/app/routes/app_pages.dart';
+import 'package:mft/app/utils/commons.dart';
 import 'package:sizer/sizer.dart';
 
 class SuccessPasswordView extends GetView {
@@ -48,7 +50,13 @@ class SuccessPasswordView extends GetView {
                 ],
               ),
             ),
-            WidthButton(active: true, title: 'Login', onTap: () {}),
+            WidthButton(
+              active: true,
+              title: 'Login',
+              onTap: () {
+                goto(Routes.SIGNIN);
+              },
+            ),
           ],
         ),
       ),

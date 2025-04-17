@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mft/app/modules/signup/views/policy_view.dart';
+import 'package:mft/app/modules/signup/views/terms_view.dart';
+import 'package:mft/app/utils/commons.dart';
 import 'package:sizer/sizer.dart';
 
 class TermsAgreement extends StatefulWidget {
@@ -15,7 +18,7 @@ class _TermsAgreementState extends State<TermsAgreement> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Checkbox(
           value: isChecked,
@@ -41,7 +44,7 @@ class _TermsAgreementState extends State<TermsAgreement> {
                 ),
               ),
               InkWell(
-                onTap: () {},
+                onTap: () => gotoClass(TermsView()),
                 child: Text(
                   "Terms of Service",
                   style: GoogleFonts.montserrat(
@@ -64,7 +67,7 @@ class _TermsAgreementState extends State<TermsAgreement> {
                 ),
               ),
               InkWell(
-                onTap: () {},
+                onTap: () => gotoClass(PolicyView()),
                 child: Text(
                   "Privacy Policy",
                   style: GoogleFonts.montserrat(

@@ -3,14 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mft/app/modules/intro/controllers/intro_controller.dart';
-import 'package:mft/app/modules/intro/views/intro_two_view.dart';
 import 'package:mft/app/routes/app_pages.dart';
 import 'package:mft/app/utils/colors.dart';
 import 'package:mft/app/utils/commons.dart';
 import 'package:sizer/sizer.dart';
 
-class IntroView extends GetView<IntroController> {
-  const IntroView({super.key});
+class IntroTwoView extends GetView<IntroController> {
+  const IntroTwoView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +25,7 @@ class IntroView extends GetView<IntroController> {
               left: 0,
               right: 0,
               child: Image.asset(
-                'assets/images/money.png',
+                'assets/images/phone.png',
                 width: double.infinity,
                 fit: BoxFit.cover,
               ),
@@ -73,7 +72,7 @@ class IntroView extends GetView<IntroController> {
                               }),
                               SizedBox(height: 3.5.h),
                               Text(
-                                "IT'S ALL ABOUT MONEY",
+                                "Traders",
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.montserrat(
                                   fontSize: 20.5.sp,
@@ -85,9 +84,8 @@ class IntroView extends GetView<IntroController> {
                               ),
 
                               SizedBox(height: 3.5.h),
-
                               Text(
-                                "This striking animation isn't just text; it's a reality check wrapped in sleek visuals, designed to make you pause and reflect.",
+                                "Trade with our recommended broker and unlock Free Community Access on Deposit above 500 USD",
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.montserrat(
                                   fontSize: 18.sp,
@@ -124,7 +122,7 @@ class IntroView extends GetView<IntroController> {
                             ),
                           ),
                           InkWell(
-                            onTap: () => gotoClass(IntroTwoView()),
+                            onTap: () => goto(Routes.SIGNIN),
                             child: Container(
                               width: 8.h,
                               height: 8.h,

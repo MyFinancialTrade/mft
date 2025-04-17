@@ -6,6 +6,9 @@ import 'package:mft/app/modules/shared/widgets/heading.dart';
 import 'package:mft/app/modules/shared/widgets/input_field.dart';
 import 'package:mft/app/modules/shared/widgets/password_input_field.dart';
 import 'package:mft/app/modules/shared/widgets/width_button.dart';
+import 'package:mft/app/routes/app_pages.dart';
+import 'package:mft/app/utils/app_extensions.dart';
+import 'package:mft/app/utils/commons.dart';
 import 'package:sizer/sizer.dart';
 
 import '../controllers/signin_controller.dart';
@@ -15,13 +18,15 @@ class SigninView extends GetView<SigninController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset : false,
       body: Padding(
         padding: EdgeInsets.fromLTRB(8.w, 13.h, 8.w, 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Header(heading: 'Welcome Back!', body: 'Please login to continue.'),
-            SizedBox(height: 2.5.h),
+            // SizedBox(height: 2.5.h),
+            2.5.h.height,
             CustomInputField(
               title: 'Email Address',
               controller: controller.emailEditiingController.value,
@@ -36,6 +41,7 @@ class SigninView extends GetView<SigninController> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 InkWell(
+                  onTap: ()=> goto(Routes.FORGOT_PASSWORD),
                   child: Text(
                     'Forgot Password?',
                     style: GoogleFonts.montserrat(
@@ -49,16 +55,18 @@ class SigninView extends GetView<SigninController> {
                 ),
               ],
             ),
-            SizedBox(height: 6.h),
+            // SizedBox(height: 6.h),
+            6.h.height,
 
             Obx(() {
               return WidthButton(
                 active: controller.isFormValid.value,
                 title: 'Login',
-                onTap: () {},
+                onTap: () => goto(Routes.HOME),
               );
             }),
-            SizedBox(height: 22.h),
+            // SizedBox(height: 22.h),
+            22.h.height,
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -75,7 +83,7 @@ class SigninView extends GetView<SigninController> {
                       ),
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: ()  => goto(Routes.SIGNUP),
                       child: Text(
                         "Sign Up",
                         style: GoogleFonts.montserrat(

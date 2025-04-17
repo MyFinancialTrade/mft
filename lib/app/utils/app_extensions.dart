@@ -18,3 +18,15 @@ extension ReverseDateTimeExtension on String {
     return DateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").parse(this);
   }
 }
+
+extension HeightExtension on double {
+  SizedBox get height  {
+    return SizedBox(height: this);
+  }
+}
+
+extension WidthExtension on double {
+  SizedBox get width {
+    return SizedBox(width: this);
+  }
+}

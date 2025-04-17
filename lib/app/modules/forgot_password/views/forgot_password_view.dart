@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:mft/app/modules/shared/arrow_back.dart';
+import 'package:mft/app/modules/forgot_password/views/enter_otp_view.dart';
+import 'package:mft/app/modules/shared/widgets/arrow_back.dart';
 import 'package:mft/app/modules/shared/widgets/heading.dart';
 import 'package:mft/app/modules/shared/widgets/input_field.dart';
 import 'package:mft/app/modules/shared/widgets/width_button.dart';
+import 'package:mft/app/utils/commons.dart';
 import 'package:sizer/sizer.dart';
 
 import '../controllers/forgot_password_controller.dart';
@@ -14,6 +16,7 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Padding(
         padding: EdgeInsets.fromLTRB(7.w, 2.h, 7.w, 0),
         child: Column(
@@ -43,7 +46,7 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
                 return WidthButton(
                   active: controller.isEmailFormValid.value,
                   title: 'Send Code',
-                  onTap: () {},
+                  onTap: () => gotoClass(EnterOtpView()),
                 );
               }),
             ),

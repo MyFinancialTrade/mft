@@ -19,8 +19,8 @@ class WidthButton extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       height: 6.8.h,
-      child: GestureDetector(
-        onTap: active ? onTap : null,
+      child: InkWell(
+        onTap: onTap,
         child: Container(
           decoration: BoxDecoration(
             color: active ? Color(0xFF0D0A5C) : Color(0x800D0A5C),

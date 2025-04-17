@@ -8,6 +8,8 @@ import 'package:mft/app/modules/shared/widgets/input_field.dart';
 import 'package:mft/app/modules/shared/widgets/password_input_field.dart';
 import 'package:mft/app/modules/shared/widgets/phone_input_field.dart';
 import 'package:mft/app/modules/shared/widgets/terms_and_conditions.dart';
+import 'package:mft/app/routes/app_pages.dart';
+import 'package:mft/app/utils/commons.dart';
 import 'package:sizer/sizer.dart';
 
 import '../controllers/signup_controller.dart';
@@ -17,6 +19,7 @@ class SignupView extends GetView<SignupController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset : false,
       body: Padding(
         padding: EdgeInsets.fromLTRB(8.w, 10.h, 8.w, 0),
         child: SingleChildScrollView(
@@ -68,11 +71,13 @@ class SignupView extends GetView<SignupController> {
                 hint: ' 000 000 0000',
                 controller: TextEditingController(),
               ),
+       
               TermsAgreement(),
+              SizedBox(height: 2.h),
 
               WidthButton(active: true, title: 'Signup', onTap: () {}),
 
-              SizedBox(height: 5.h),
+              SizedBox(height: 3.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -89,7 +94,7 @@ class SignupView extends GetView<SignupController> {
                         ),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () => goto(Routes.SIGNIN),
                         child: Text(
                           "Sign In",
                           style: GoogleFonts.montserrat(
